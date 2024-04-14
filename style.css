@@ -1,0 +1,218 @@
+/* Hide "contact us" in menu */
+.contactUs {
+	display: none;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	min-height: 1000px;
+}
+
+.pageLayout {
+	margin-top: 30px;
+	display: grid;
+	grid-template-columns: 275px 1fr;
+	grid-template-rows: auto 1fr;
+	gap: 25px;
+}
+.pageLayout__filters {
+	grid-column: 1;
+	grid-row: 1;
+}
+.pageLayout__extraInfo {
+	grid-column: 1;
+	grid-row: 2;
+}
+.pageLayout__programs {
+	grid-column: 2;
+	grid-row: 1 / span 2;
+}
+
+@media (max-width: 767px) {
+	.pageLayout {
+		grid-template-columns: 1fr;
+		grid-template-rows: none;
+	}
+	.pageLayout__filters {
+		grid-column: 1;
+		grid-row: 1;
+	}
+	.pageLayout__extraInfo {
+		grid-column: 1;
+		grid-row: 3;
+		padding-top: 20px;
+	}
+	.pageLayout__programs {
+		grid-column: 1;
+		grid-row: 2;
+	}
+}
+
+
+.filters__group {
+	padding: 14px 16px 6px;
+	border: 2px solid #003e7e;
+	border-top: none;
+}
+
+.filters__subgroup {
+	border-top: 1px solid #2e2e2d;
+	padding-top: 10px;
+	margin-top: 10px;
+}
+
+.filters__group input[type="checkbox"], .filters__group input[type="radio"] {
+	float: left;
+	margin: 4px 0 0 0;
+}
+
+.filters__group label {
+	display: block;
+	line-height: 1.2;
+	margin-left: 22px;
+	margin-bottom: 8px;
+}
+
+.filters__group p:last-child {
+	margin-bottom: 12px;
+}
+
+.undergraduateOnly, .graduateOnly {
+	display: none;
+}
+
+
+.programCardContainer {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	gap: 25px;
+	margin-top: 0;
+}
+
+.programCard {
+
+}
+
+.programCard a {
+	position: relative;
+	display: block;
+	box-shadow: 0px 0 8px 0 rgb(0 0 0 / 24%), 0px 4px 8px 0 rgb(0 0 0 / 24%);
+	/* height: 100%; */ /* For consistent card height within each row, enable this */
+}
+
+/* For dev purposes, add a mark to show which programs actually have a page
+.programCard a:not([href=""]):after {
+	content: '';
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 20px 20px 0 0;
+	border-color: transparent #FFD200 transparent transparent;
+	right: 0;
+	bottom: 0;
+	position: absolute;
+} */
+
+.programCard img {
+	object-fit: cover;
+}
+
+.programCard__text {
+	position: relative;
+	padding: 10px 15px 12px;
+}
+
+.programCard__text div {
+	/* Prevent link hover effects */
+	display: inline-block;
+
+	line-height: 1.2;
+}
+
+.programCard h4 {
+	margin-bottom: 3px;
+	text-transform: none;
+}
+
+.programCard__degreeType {
+	color: #2e2e2d;
+}
+
+.programCard__deliveryMethod {
+	font-size: 16px;
+	margin-top: 5px;
+}
+
+.programCard__deliveryMethod {
+	/* 				padding: 2px 5px; */
+	color: #003e7e;
+	font-weight: 600;
+	font-family: 'jubilat';
+}
+.programCard__deliveryMethod.-onCampus {
+	/* 				background-color: #ffd200; */
+}
+.programCard__deliveryMethod.-online {
+	/* 				background-color: #AFD5E9; */
+}
+
+
+/* Icon */
+.programCard__deliveryMethod i {
+	margin-right: 1px;
+	font-size: 0.95em;
+}
+
+
+@media (max-width: 1100px) {
+	.programCardContainer {
+		grid-template-columns: 1fr 1fr;
+	}
+}
+@media (max-width: 550px) {
+	.programCardContainer {
+		grid-template-columns: 1fr;
+	}
+	.programCard img {
+		display: none;
+	}
+	/* 				.programCard__deliveryMethod {
+	position: static;
+	margin-top: 4px;
+} */
+}
+
+.accordion {
+	margin: 0;
+}
+.accordion {
+	margin-bottom: 20px;
+}
+.accordion__trigger {
+	padding: 10px 45px 10px 20px;
+}
+.accordion__trigger:after { /* Expand/Collapse Arrow */
+	right: 20px;
+}
+@media (max-width: 550px) {
+	.accordion__trigger {
+		padding: 10px 40px 10px 15px;
+	}
+	.accordion__trigger:after { /* Expand/Collapse Arrow */
+		right: 15px;
+	}
+}
+.accordion__content {
+	padding: 0;
+}
+
+.accordion__hr {
+	margin: 40px 0;
+}
+
+.pageLayout__extraInfo h4 {
+	margin-bottom: 3px;
+}
